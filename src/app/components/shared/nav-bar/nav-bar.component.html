@@ -1,0 +1,156 @@
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+
+  
+  <div fxHide.gt-xs >
+      <button id="btn-toggle" mat-icon-button (click)="onToggleSidenav()">
+          <mat-icon>menu</mat-icon>
+      </button>
+  </div>
+  <div>
+      <a routerLink="">{{title}}</a>
+  </div>
+
+
+  <!-- <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+      <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+          <li>
+              <a routerLink="/clientes">Owner Actions</a>
+          </li>
+          <li>
+              <a routerLink="/login">Account Actions</a>
+          </li>
+      </ul>
+  </div> -->
+
+  <span class="menu-spacer"></span>
+  <div id="itensmenu"  fxShow="true" fxHide.lt-md>
+
+           
+        <span class="example-spacer"></span>
+
+        <button mat-button [matMenuTriggerFor]="cadastros">Cadastros</button>
+        <mat-menu #cadastros="matMenu" yPosition="below">
+            <button mat-menu-item [routerLink]="['/clientes']">Clientes</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="manutencao">Manutenção</button>
+        <mat-menu #manutencao="matMenu" yPosition="below">
+            <button mat-menu-item [matMenuTriggerFor]="usuario">Usuarios</button>
+        </mat-menu>
+
+        <mat-menu #usuario="matMenu">
+            <button mat-menu-item [routerLink]="['/login']" >Gerenciar</button>
+            <button mat-menu-item>vazio</button>
+          </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="movimentacao">Movimentação</button>
+        <mat-menu #movimentacao="matMenu" yPosition="below">
+            <button mat-menu-item [matMenuTriggerFor]="servico">Serviços</button>
+        </mat-menu>
+
+        <mat-menu #servico="matMenu">
+          <button mat-menu-item>Troca de oléo</button>
+          <button mat-menu-item>Revisão</button>
+        </mat-menu>
+    </div>
+
+
+
+
+</mat-toolbar-row>
+
+</mat-toolbar>
+
+
+
+
+<!-- <div style="height: 100%;">
+
+<mat-toolbar>
+ <mat-toolbar-row>
+    <button  mat-mini-fab (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm class="example-button-container" aria-label="menu icon">
+      <mat-icon >menu</mat-icon>
+    </button>
+      <span>{{title}}</span>
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md>
+
+               <mat-menu  #menu="matMenu" mat-icon>
+                <button mat-menu-item>Item 1</button>
+                <button mat-menu-item>Item 2</button>
+              </mat-menu> 
+            <span class="example-spacer"></span>
+
+            <button mat-button [matMenuTriggerFor]="cadastros">Cadastros</button>
+            <mat-menu #cadastros="matMenu" yPosition="below">
+                <button mat-menu-item [routerLink]="['/clientes']">Clientes</button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="manutencao">Manutenção</button>
+            <mat-menu #manutencao="matMenu" yPosition="below">
+                <button mat-menu-item [matMenuTriggerFor]="usuario">Usuarios</button>
+            </mat-menu>
+
+            <mat-menu #usuario="matMenu">
+                <button mat-menu-item>Gerenciar</button>
+                <button mat-menu-item>vazio</button>
+              </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="movimentacao">Movimentação</button>
+            <mat-menu #movimentacao="matMenu" yPosition="below">
+                <button mat-menu-item [matMenuTriggerFor]="servico">Serviços</button>
+            </mat-menu>
+
+            <mat-menu #servico="matMenu">
+              <button mat-menu-item>Troca de oléo</button>
+              <button mat-menu-item>Revisão</button>
+            </mat-menu>
+        </div>
+  </mat-toolbar-row>
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="container">
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+        <span class="example-spacer"></span>
+        <div d-flex flex-column>
+          <div>
+            <button mat-button [matMenuTriggerFor]="cadastros">Cadastros</button>
+            <mat-menu #cadastros="matMenu" yPosition="below">
+                  <button mat-menu-item [routerLink]="['/clientes']">Clientes</button>
+              </mat-menu>
+          </div>
+          <div>
+            <button mat-button [matMenuTriggerFor]="manutencao">Manutenção</button>
+            <mat-menu #manutencao="matMenu" yPosition="below">
+                <button mat-menu-item [matMenuTriggerFor]="usuario">Usuarios</button>
+            </mat-menu>
+          </div>
+          <div>
+            <mat-menu #usuario="matMenu">
+                <button mat-menu-item>Gerenciar</button>
+                <button mat-menu-item>vazio</button>
+              </mat-menu>
+          </div>
+
+            <button mat-button [matMenuTriggerFor]="movimentacao">Movimentação</button>
+            <mat-menu #movimentacao="matMenu" yPosition="below">
+                <button mat-menu-item [matMenuTriggerFor]="servico">Serviços</button>
+            </mat-menu>
+
+            <mat-menu #servico="matMenu">
+              <button mat-menu-item>Troca de oléo</button>
+              <button mat-menu-item>Revisão</button>
+            </mat-menu>
+        </div>
+
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>dsafsdfasdfsd </mat-sidenav-content>
+    
+  </mat-sidenav-container>
+
+</div> -->

@@ -1,0 +1,30 @@
+.form {
+    padding-top: 5em;
+}
+
+.card-login{
+    max-width: 800px;
+    min-width: 200px;
+    box-shadow: 10px 5px 5px rgb(0,0,0,0.3);
+    background-color: rgb(255, 255, 255);   
+    padding: 20px 0 20px 20px;
+}
+
+
+.example-full-width {
+    width: 80%;
+    min-width: 150px;
+    color: #000; 
+  }
+
+
+.mat-raised-button {
+    margin: 8px 8px 8px 8px;
+    width: 90px;
+    text-align: center;
+  }
+
+
+
+
+

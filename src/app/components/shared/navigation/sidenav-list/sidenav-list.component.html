@@ -1,0 +1,47 @@
+<mat-nav-list>
+    <a mat-list-item routerLink="" (click)="onSidenavClose()">
+        <mat-icon>home</mat-icon> <span class="nav-caption">Home</span>
+    </a>
+    <a mat-list-item [matMenuTriggerFor]="cadastro">
+        <mat-icon>assignment_ind</mat-icon> <span class="nav-caption">Clientes</span>   
+    </a>
+    <mat-menu #cadastro="matMenu">
+        <button mat-menu-item (click)="onSidenavClose()" routerLink="/clientes">clientes</button>
+        <button mat-menu-item (click)="onSidenavClose()">Add contact</button>
+    </mat-menu>
+    <a mat-list-item [matMenuTriggerFor]="manutencao">
+        <mat-icon>account_balance</mat-icon><span class="nav-caption">Manutenção</span>
+    </a>
+   
+        <mat-menu #manutencao="matMenu" yPosition="below">
+            <button mat-menu-item [matMenuTriggerFor]="usuario">Usuarios</button>
+        </mat-menu>
+
+        <mat-menu #usuario="matMenu">
+            <button mat-menu-item [routerLink]="['/login']" (click)="onSidenavClose()">Gerenciar</button>
+            <button mat-menu-item>vazio</button>
+          </mat-menu>
+
+          <a mat-list-item [matMenuTriggerFor]="movimentacao">
+            <mat-icon>account_balance</mat-icon><span class="nav-caption">Movimentação</span>
+        </a>
+          <mat-menu #movimentacao="matMenu" yPosition="below">
+              <button mat-menu-item [matMenuTriggerFor]="servico">Serviços</button>
+          </mat-menu>
+  
+          <mat-menu #servico="matMenu">
+            <button mat-menu-item>Troca de oléo</button>
+            <button mat-menu-item>Revisão</button>
+          </mat-menu>
+
+
+
+    <!-- <mat-list-item [matMenuTriggerFor]="menu">
+        <mat-icon>unfold_more</mat-icon>
+        <a matline>Example</a>
+    </mat-list-item>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="onSidenavClose()">View profile</button>
+      <button mat-menu-item (click)="onSidenavClose()">Add contact</button>
+    </mat-menu> -->
+</mat-nav-list>

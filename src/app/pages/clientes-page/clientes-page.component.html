@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row" align="center">
+        <div class="col">
+            <div class="form">
+                <mat-card class="card-login">
+                    <h1>Clientes</h1>
+                    <form [formGroup]="form">
+                        <div class="form-group">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Nome</mat-label>
+                                <input matInput id="nome" type="text" formControlName="Nome" >
+                            </mat-form-field>
+                        </div>
+                        <div class="form-group">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Cep</mat-label>
+                                <input matInput class="campo" type="text" formControlName="Cep">
+                            </mat-form-field>
+                        </div>
+                        <div class="form-group">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Endereço</mat-label>
+                                <input matInput id="endereco" type="text" formControlName="Endereco">
+                            </mat-form-field>
+                      
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Numero</mat-label>
+                                <input matInput id="numero" type="text" formControlName="Numero">
+                            </mat-form-field>
+                        </div>
+                        <div class="form-group">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Bairro</mat-label>
+                                <input matInput id="bairro" type="text" formControlName="Bairro">
+                            </mat-form-field>
+                        </div>
+                        <div class="form-group">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Cidade</mat-label>
+                                <input matInput id="cidade" type="text" formControlName="Cidade">
+                            </mat-form-field>
+                        </div>
+                        <div class="form-group">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Estado</mat-label>
+                                <input matInput id="estado" type="text" formControlName="Estado">
+                            </mat-form-field>
+                        </div>
+                        
+                        <div class="form-group">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Email</mat-label>
+                                <input matInput id="email" type="text" formControlName="Email">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="form-group">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Observação</mat-label>
+                                <textarea  matInput id="observacao" type="text" formControlName="Observacao"></textarea>
+                            </mat-form-field>
+                        </div>
+
+                        <button mat-raised-button color="primary">Salvar</button>
+                        <button mat-raised-button color="primary">Cancelar</button>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
