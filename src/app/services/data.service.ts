@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { SecurityService } from '../util/security.service';
+import { Address } from '../models/Address.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,15 @@ export class DataService {
   }
 
 //#endregion
+
+buscaCep(cep){
+  let urlSiteCep = `https://viacep.com.br/ws/${cep}/json`;
+
+   return this.http.get<Address>(`${urlSiteCep}`);
+
+}
+
+
 
 //#region Clientes
 

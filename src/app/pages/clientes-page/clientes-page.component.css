@@ -1,19 +1,35 @@
+.container{
+  padding: 0px;
+  margin: 0px;
+  max-width: 100%;
+}
+div.col-12{
+  padding: 0px;
+  margin: 0px;
+}
+
 .form {
-    padding-top: 5em;
+    padding-top: 1em;
+    width: 100%;
+}
+
+.form-control:focus{
+  box-shadow: none;
+  background-color: white;
+  background: white;
 }
 
 .card-login{
     max-width: 800px;
     min-width: 200px;
+    width: 100%;
     box-shadow: 10px 5px 5px rgb(0,0,0,0.3);
     background-color: rgb(255, 255, 255);   
-    padding: 20px 0 20px 20px;
 }
 
 
 .example-full-width {
-    width: 80%;
-    min-width: 150px;
+    width: 100%;
     color: #000; 
   }
 
@@ -24,7 +40,31 @@
     text-align: center;
   }
 
+/* input:-webkit-autofill {
+    -webkit-text-fill-color: #000 !important;
+    background: white;
+    background-color: white;
+}
 
+input:-webkit-autofill {
+    box-shadow: 0 0 0 30px rgb(255, 255, 255) inset;
+    background: white;
+    background-color: white;
 
+} */
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid white;
+  -webkit-text-fill-color: black !important;
+  -webkit-box-shadow:  0 0 0 30px rgb(255, 255, 255) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 

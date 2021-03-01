@@ -27,9 +27,12 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { SidenavListComponent } from './components/shared/navigation/sidenav-list/sidenav-list.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { ToastrModule } from 'ngx-toastr';
+import { MaskDirective } from './directives/mask.directive';
 
 @NgModule({
   declarations: [
+    MaskDirective,
     AppComponent,
     FramePageComponent,
     LoginPageComponent,
@@ -53,7 +56,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     MatMenuModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    ToastrModule.forRoot()
   ],
   providers: [DataService, AuthService],
   bootstrap: [AppComponent]
