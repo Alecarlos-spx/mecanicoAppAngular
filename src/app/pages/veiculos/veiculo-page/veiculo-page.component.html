@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="form-row justify-content-center text-center">
+              <mat-card class="card-login">
+                  <h3 class="titulo">Veículo</h3>
+                  <form [formGroup]="form">
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                              <app-input-text titulo="Modelo" controlName="Modelo" [formGroup]="form"></app-input-text>
+                          </div>
+                          <div class="form-group col-md-2">
+                            <app-input-text titulo="Ano Fabricação" controlName="AnoFabricacao" [formGroup]="form"></app-input-text>
+                          </div>
+                          <div class="form-group col-md-2">
+                            <app-input-text titulo="Ano Modelo" controlName="AnoModelo" [formGroup]="form"></app-input-text>
+                          </div>
+                          <div class="form-group col-md-2">
+                              <app-input-text titulo="Placa" controlName="Placa" [formGroup]="form"></app-input-text>
+                          </div>
+                        </div>
+
+                      <div class="form-row">
+                        <div class="form-group col-md-8">
+
+
+                            <mat-form-field class="example-full-width">
+                              <mat-label>Fabriante do Veículo</mat-label>
+                              <mat-select formControlName="IdFabricanteVeiculo" [formGroup]="form">
+                                <mat-option *ngFor="let fabricante of listaFabricantes" [value]="fabricante.id">
+                                  {{fabricante.nome}}
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+
+                        </div>
+
+
+                        <div class="form-group col-md-2">
+                          <app-input-text titulo="Cor" controlName="Cor" [formGroup]="form"></app-input-text>
+                        </div>
+                        <div class="form-group col-md-2">
+
+                          <mat-form-field class="example-full-width">
+                            <mat-label>Combustível</mat-label>
+                            <mat-select formControlName="Combustivel" [formGroup]="form">
+                              <mat-option *ngFor="let combustivel of listaCombustivel | keyvalue" [value]="combustivel.value">
+                                {{combustivel.value}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+
+                            <!-- <app-input-text titulo="Combustível" controlName="Combustivel" [formGroup]="form"></app-input-text> -->
+                        </div>
+                      </div>
+
+                          <div class="form-row justify-content-center">
+                              <button mat-raised-button [disabled]="!form.valid" (click)="submit()" color="primary" >Salvar</button>
+
+
+                                <button mat-raised-button color="primary" *ngIf="id != 0"  (click)= "exclui()">Excluir</button>
+                                <button mat-raised-button color="primary" (click)= "retornar()">Cancelar</button>
+
+                          </div>
+
+                  </form>
+              </mat-card>
+  <div>
+
+</div>
+
+
+<!--
+<ng-template #exluirModal>
+<div class="modal-body text-center">
+  <p>Tem certeza que deseja remover esse Cliente?</p>
+  <button type="button" class="btn btn-default"  (click)="confirmaExcluir()">Sim</button>
+  <button type="button" class="btn btn-primary"  (click)="cancelaExcluir()">Não</button>
+</div>
+</ng-template> -->

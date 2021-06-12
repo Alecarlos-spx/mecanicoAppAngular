@@ -17,6 +17,8 @@ import { CustomValidator } from 'src/app/validators/custon.validator';
 export class LoginPageComponent implements OnInit {
   form: FormGroup;
 
+  imagem =  "../../../assets/logoMotor1.jpg";
+
   hide = true;
   constructor(
     private fb: FormBuilder,

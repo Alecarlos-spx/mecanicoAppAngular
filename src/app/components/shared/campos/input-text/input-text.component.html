@@ -1,0 +1,25 @@
+<div [formGroup]="formGroup">
+    <mat-form-field class="example-full-width">
+        <mat-label> {{titulo}} </mat-label>
+
+        <input matInput  class="form-control"
+            [name]="controlName"
+            [formControlName]="controlName"
+            [id]="controlName"
+            [mask]="mascara"
+            type="text">
+            <!-- [showMaskTyped]="true" -->
+
+
+        <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'required')">  {{controlName}}  é obrigatorio</mat-error>
+        <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'minlength')">
+            {{controlName}} precisa ter no mínimo {{validacao.lengthValidar(formControl, 'minlength')}} caracteres
+        </mat-error>
+
+        <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'maxlength')">
+            {{controlName}} pode ter no máximo {{validacao.lengthValidar(formControl, 'maxlength')}} caracteres
+        </mat-error>
+    </mat-form-field>
+</div>
+
+

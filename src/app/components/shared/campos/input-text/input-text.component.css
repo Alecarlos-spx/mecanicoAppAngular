@@ -1,0 +1,13 @@
+.form-control:focus{
+    box-shadow: none;
+    background-color: white;
+    background: white;
+  }
+  
+ 
+  
+  .example-full-width {
+      width: 100%;
+      color: #000; 
+    }
+  

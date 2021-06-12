@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-/* 
+/*
 body
-{ 
-    height: 100%; 
-    margin: 0; 
+{
+    height: 100%;
+    margin: 0;
     padding: 0;
-    font-family: Helvetica, Arial, sans-serif; 
+    font-family: Helvetica, Arial, sans-serif;
     background: rgb(213, 214, 214);
 }
 
@@ -21,9 +21,34 @@ input:-webkit-autofill {
 @import url("reset.css");
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+
+.container{
+  max-width: 100%;
+  font-size: 0.75rem;
+  padding: 0px;
+  margin: 0px;
 
 
+}
+
+.containerTable{
+  padding: 0px;
+  margin: 2px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+
+
+
+.titulo{
+  font-style: italic;
+  font-weight: 300;
+}
 
 @media screen and (min-width: 600px) {
     #itensmenu{display: hide;}
@@ -33,5 +58,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @media screen and (max-width: 600px) {
     #itensmenu{display: none;}
     #btn-toggle{display: block}
+    .mat-toobar-row{padding: 0 0 0 0; margin: 0 0 0 0;}
 }
 

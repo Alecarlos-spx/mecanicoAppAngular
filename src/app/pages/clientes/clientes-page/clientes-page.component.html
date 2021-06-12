@@ -1,97 +1,93 @@
-<div class="container">
+<div class="container" >
     <div class="form-row justify-content-center text-center">
                 <mat-card class="card-login">
-                    <h1>Clientes</h1>
+
+                  <div id="teste" [ngClass]="{
+                    'desativaFormPai': bloqueado
+                  }">
+
+                  <!-- [ngClass]="{'desativaFormPai': classe=='sim'}">' -->
+
+                    <h2 class="titulo">Clientes</h2>
                     <form [formGroup]="form">
                         <div class="form-row">
                             <div class="form-group col-md-12">
-                                <mat-form-field class="example-full-width">
-                                    <mat-label>Nome</mat-label>
-                                    <input matInput  class="form-control " id="nome" type="text" formControlName="Nome">
-                                    <mat-error *ngIf="!form.controls.Nome.valid && !form.controls.Nome.pristine && form.controls.Nome.touched">
-                                        Nome é obrigatorio
-                                    </mat-error>
-                                </mat-form-field>
+                                <app-input-text titulo="Nome" controlName="Nome" [formGroup]="form"></app-input-text>
                             </div>
                         </div>
+
                         <div class="form-row">
-                            <div class="form-group col-md-5">
-                                
+                            <div class="form-group col-md-4">
                                 <mat-form-field class="example-full-width">
-                                    <mat-label>Telefone</mat-label>
-                                    <input matInput class="form-control" type="text" formControlName="Telefone"
-                                    mask="(##) #####-####">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput class="form-control" id="email" type="text"
+                                        formControlName="Email">
                                 </mat-form-field>
                             </div>
-                            
-                            <div class="form-group col-md-5">
-                                <mat-form-field class="example-full-width">
-                                    <mat-label>Telefone</mat-label>
-                                    <input matInput class="form-control" type="text" formControlName="Telefone1"
-                                    mask="(##) #####-####">
-                                </mat-form-field>
+                            <div class="form-group col-md-3">
+
+                                <app-input-text titulo="Telefone" controlName="Telefone" [formGroup]="form"
+                                    mascara="(00) 000000009" ></app-input-text>
                             </div>
+                            <div class="form-group col-md-3">
 
-
+                                <app-input-text titulo="Telefone" controlName="Telefone1" [formGroup]="form"
+                                    mascara="(00) 000000009" ></app-input-text>
+                            </div>
                             <div class="form-group col-md-2">
-                                <mat-form-field class="example-full-width">
+                                <!-- <app-input-text titulo="Cep" controlName="Cep" [formGroup]="form" mascara="00000-000"
+                                    mostrarMascara="true"
+                                    acaoEvento="consultaCEP($event.target.value)">
+                                </app-input-text> -->
+
+                               <mat-form-field class="example-full-width">
                                     <mat-label>Cep</mat-label>
                                     <input matInput class="form-control" type="text" formControlName="Cep"
-                                    mask="#####-###" (blur) ="consultaCEP($event.target.value)">  <!-- ou form.controls.Cep.value -->
+                                     mask="00000-000" (blur) ="consultaCEP($event.target.value)"> <!-- ou form.controls.Cep.value  -->
                                 </mat-form-field>
                             </div>
-                            
+
+
+
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-10">
+                            <div class="form-group col-md-4">
                                 <mat-form-field class="example-full-width">
                                     <mat-label>Endereço</mat-label>
-                                    <input matInput class="form-control" id="endereco" type="text"
+                                    <input matInput class="form-control" id="Endereco" type="text"
                                         formControlName="Endereco" readonly>
                                 </mat-form-field>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-1">
                                 <mat-form-field class="example-full-width">
                                     <mat-label>Numero</mat-label>
-                                    <input matInput class="form-control" id="numero" type="text"
-                                        formControlName="Numero">
+                                    <input matInput class="form-control" id="Numero" type="text"
+                                        formControlName="Numero" readonly>
                                 </mat-form-field>
                             </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group col-md-5">
+                            <div class="form-group col-md-3">
                                 <mat-form-field class="example-full-width">
                                     <mat-label>Bairro</mat-label>
-                                    <input matInput class="form-control" id="bairro" type="text"
+                                    <input matInput class="form-control" id="Bairro" type="text"
                                         formControlName="Bairro" readonly>
                                 </mat-form-field>
                             </div>
-                            <div class="form-group col-md-5">
+                            <div class="form-group col-md-3">
                                 <mat-form-field class="example-full-width">
                                     <mat-label>Cidade</mat-label>
                                     <input matInput class="form-control" id="cidade" type="text"
                                         formControlName="Cidade" readonly>
                                 </mat-form-field>
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-1">
                                 <mat-form-field class="example-full-width">
                                     <mat-label>Estado</mat-label>
                                     <input matInput class="form-control" id="estado" type="text"
                                         formControlName="Estado" readonly>
                                 </mat-form-field>
                             </div>
-                        </div>
-                            <div class="form-row ">
-                                <div class="form-group col-md-12">
-                                    <mat-form-field class="example-full-width">
-                                        <mat-label>Email</mat-label>
-                                        <input matInput class="form-control" id="email" type="text"
-                                            formControlName="Email">
-                                    </mat-form-field>
-                                </div>
-                            </div>
 
+                        </div>
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <mat-form-field class="example-full-width">
@@ -102,14 +98,31 @@
                                 </div>
 
                             </div>
-                           
 
                             <div class="form-row justify-content-center">
                                 <button mat-raised-button [disabled]="!form.valid" (click)="submit()" color="primary" >Salvar</button>
-                                <button mat-raised-button color="primary">Cancelar</button>
+
+
+                                <button mat-raised-button color="primary" *ngIf="id != 0" (click)= "exclui()">Excluir</button>
+                                <button mat-raised-button color="primary" (click)= "retornar()">Cancelar</button>
                             </div>
-                       
+                            <hr class="linha">
                     </form>
+                  </div>
+
+                    <div class="veiculos-Cliente">
+                      <app-veiculo-list-page [idCliente]="id" (bloquearFormCliente)="bloquearForm($event)"></app-veiculo-list-page>
+                    </div>
                 </mat-card>
     <div>
+
 </div>
+
+<!--
+<ng-template #exluirModal>
+  <div class="modal-body text-center">
+    <p>Tem certeza que deseja remover esse Cliente?</p>
+    <button type="button" class="btn btn-default"  (click)="confirmaExcluir()">Sim</button>
+    <button type="button" class="btn btn-primary"  (click)="cancelaExcluir()">Não</button>
+  </div>
+</ng-template> -->

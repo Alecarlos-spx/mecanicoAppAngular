@@ -1,7 +1,10 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SecurityService } from '../util/security.service';
 import { Address } from '../models/Address.model';
+import { environment } from 'src/environments/environment';
+import { throwError } from 'rxjs';
+
+
 
 
 @Injectable({
@@ -9,22 +12,17 @@ import { Address } from '../models/Address.model';
 })
 export class DataService {
 
-  public url = 'https://localhost:44342/api';
+  public readonly url = environment.API;
+
 
   constructor(private http: HttpClient) { }
 
 
 
 //#region token
-  public composeHeaders() {
-    const token = SecurityService.getToken();
-    const headers = new HttpHeaders().set('Authorization', `bearer ${token}`);
-
-    return headers;
-  }
 
   login(data) {
-    return this.http.post(`${this.url}/user/login`, data);
+    return this.http.post(`${this.url}user/login`, data);
   }
 
   refreshToken(){
@@ -45,31 +43,48 @@ buscaCep(cep){
 
 //#region Clientes
 
-createCliente(data){
-  return this.http.post(`${this.url}/cliente`, data, { headers: this.composeHeaders()});
-}
+// createCliente(data): Observable<Cliente>{
+//   return this.http.post<Cliente>(`${this.url}/cliente`, data, { headers: this.headers.composeHeaders()});
 
-getCliente(){
-  return this.http.get(`${this.url}/cliente`, { headers: this.composeHeaders()});
-}
+// }
 
-getClienteId(id){
-  return this.http.get(`${this.url}/cliente/${id}`, { headers: this.composeHeaders()});
-}
+// getCliente() {
 
-updateCliente(id){
-  return this.http.put(`${this.url}/cliente/${id}`, { headers: this.composeHeaders()});
-}
+//   return this.http.get<Cliente[]>(`${this.url}/cliente`, { headers: this.headers.composeHeaders()});
 
-deleteCliente(id){
-  return this.http.delete(`${this.url}/cliente/${id}`, { headers: this.composeHeaders()})
-}
+
+// }
+
+// getClienteId(id: Number): Observable<Cliente>{
+//   return this.http.get<Cliente>(`${this.url}/cliente/${id}`, { headers: this.headers.composeHeaders()});
+// }
+
+// updateCliente(id: Number, data : Cliente ){
+//   return this.http.put(`${this.url}/cliente/${id}`, data,  {headers: this.headers.composeHeaders()});
+// }
+
+// deleteCliente(id){
+//   return this.http.delete(`${this.url}/cliente/${id}`, { headers: this.headers.composeHeaders()})
+// }
 
 //#endregion
 
 
-
-
+private handleError(error: HttpErrorResponse) {
+  if (error.error instanceof ErrorEvent) {
+    // A client-side or network error occurred. Handle it accordingly.
+    console.error('An error occurred:', error.error.message);
+  } else {
+    // The backend returned an unsuccessful response code.
+    // The response body may contain clues as to what went wrong.
+    console.error(
+      `Backend returned code ${error.status}, ` +
+      `body was: ${error.error}`);
+  }
+  // Return an observable with a user-facing error message.
+  return throwError(
+    'Something bad happened; please try again later.');
+}
 
 
 }

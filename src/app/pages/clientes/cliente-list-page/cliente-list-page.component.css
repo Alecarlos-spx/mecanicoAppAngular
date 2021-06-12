@@ -1,0 +1,59 @@
+
+
+table {
+    width: 100%;
+  }
+
+  .mat-form-field {
+
+    width: 100%;
+  }
+
+  .mat-header-cell{
+
+    text-align: center;
+  }
+  .row{
+    width: 80%;
+  }
+
+
+  .filtro{
+    width: 100%;
+  }
+
+
+  .cardTable{
+    width: 100%;
+
+  }
+
+  @media screen and (max-width: 600px) {
+    td, .mat-header-cell, .filtro, .mat-paginator, .mat-raised-button  {
+      font-size: 9px;
+    }
+
+    .row{
+      width: 100%;
+    }
+
+    h1{
+      font-size: 1.25rem;
+    }
+
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 880px) {
+    td, .mat-header-cell, .filtro, .mat-paginator, .mat-raised-button  {
+      font-size: 0.5625rem;
+    }
+
+    .row{
+      width: 100%;
+    }
+
+    h1{
+      font-size: 1.25rem;
+    }
+
+  }

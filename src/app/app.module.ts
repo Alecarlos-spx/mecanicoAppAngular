@@ -13,34 +13,32 @@ import { NavBarComponent } from './components/shared/nav-bar/nav-bar.component';
 import { DataService } from './services/data.service';
 import { FramePageComponent } from './pages/master/frame.page';
 import { AuthService } from './services/auth.service';
-import { ClientesPageComponent } from './pages/clientes-page/clientes-page.component';
 
-
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import { SidenavListComponent } from './components/shared/navigation/sidenav-list/sidenav-list.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ToastrModule } from 'ngx-toastr';
-import { MaskDirective } from './directives/mask.directive';
+import { IConfig, NgxMaskModule } from 'ngx-mask';
+
+import { ModalModule } from 'ngx-bootstrap/modal';
+
+import { MaterialModule } from './modulo/material/material.module';
+import { SharedModule } from './components/shared/shared.module';
+
+import { SidenavListComponent } from './components/shared/navigation/sidenav-list/sidenav-list.component';
+import { CadastroModule } from './modulo/cadastro/cadastro.module';
+
+
+
+
+
+export let options: Partial<IConfig> | (() => Partial<IConfig>) = {};
+
 
 @NgModule({
   declarations: [
-    MaskDirective,
     AppComponent,
     FramePageComponent,
     LoginPageComponent,
     NavBarComponent,
-    ClientesPageComponent,
     SidenavListComponent,
-    HomePageComponent
-
   ],
   imports: [
     BrowserModule,
@@ -48,17 +46,14 @@ import { MaskDirective } from './directives/mask.directive';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    ToastrModule.forRoot()
+    MaterialModule,
+    SharedModule,
+    CadastroModule,
+    ToastrModule.forRoot(),
+    ModalModule.forRoot(),
+    NgxMaskModule.forRoot(options)
   ],
+  entryComponents: [],
   providers: [DataService, AuthService],
   bootstrap: [AppComponent]
 })
