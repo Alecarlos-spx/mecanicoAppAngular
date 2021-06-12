@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row align-items-center">
-        <div class="col" align="center">  
+        <div class="col" align="center">
             <div>
                 <img class="logo" [src]="imagem" alt="" srcset="">
             </div>
-            
+
             <mat-card class="card-login">
                 <form [formGroup]="form">
                     <div class="text-center">
@@ -18,7 +18,7 @@
                         <!-- <div>
                             {{email.className}}
                         </div> -->
-                
+
                         </div>
                         <div class="form-group">
                         <mat-form-field class="example-full-width">
@@ -31,7 +31,7 @@
                         </div>
 
                         <div class="form-group">
-                            
+
                             <button class="buttonForm" mat-button (click)="submit()" [disabled]="form.invalid" ><span class="material-icons">
                                 car_repair
                                 </span>Entrar</button>
@@ -41,6 +41,6 @@
             </mat-card>
         </div>
     </div>
-</div>    
+</div>
 
 

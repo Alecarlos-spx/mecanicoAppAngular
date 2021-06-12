@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // API: 'https://localhost:5001/api/'
-  API: 'https://mecanicoapicadastros.herokuapp.com/api/'
+   API: 'https://localhost:5001/api/'
+  //API: 'https://mecanicoapicadastros.herokuapp.com/api/'
 };
 
 /*

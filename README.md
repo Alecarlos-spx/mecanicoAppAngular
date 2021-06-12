@@ -1,27 +1,30 @@
 # MecanicoApp
+# Projeto de Implementação de Administração de Mecanica
+## BackEnd hospedado
+### Heroku - https://mecanicoapicadastros.herokuapp.com/swagger/index.html
+### GitHub - 
+## FrontEnd hospedado
+### Heroku - https://mecanicoapp-angular.herokuapp.com/
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.18.
+## Tecnologia utilizada 
 
-## Development server
+- Angular versão 8.3.29 [Angular CLI](https://github.com/angular/angular-cli)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Escopo
+	Projeto de Administração de Mecanica
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Utilização do Projeto
+1. Após fazer o clone do projeto, utilizar o comando no pompt de comando na pasta do projeto 
+		- npm install
+2. Para executar o projeto e abrir no browser
+    - `ng serve -o`  
 
-## Build
+	
+##Lista das URIs
+	1. Principal https://localhost:4200 com redirecionamento para https://localhost:4200/login
+	
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#Informações para Build
+  - Utilizar o comando `ng build`, será criada uma pasta `dist/`. Para criação de versão de produção utilize a flag `--prod`.

@@ -10,14 +10,18 @@ body { height: 100%; color:white; background-color: white;}
     max-width: 480px;
     min-width: 200px;
     align-items: center;
-    box-shadow: 10px 5px 5px rgb(0,0,0,0.3);
-    background-color: #b6acac;
-    margin: 5px;
+    box-shadow: 10px 8px 8px rgb(0,0,0,0.5);
+    background-color: #3f25b3;
+    border-radius: 8px;
 }
 
 .container, .row {
     height: 100%;
     min-height: 100%;
+}
+
+.mat-input-element{
+  color: white;
 }
 
 .example-container .mat-form-field + .mat-form-field {
@@ -92,7 +96,8 @@ body { height: 100%; color:white; background-color: white;}
   input:-webkit-autofill:focus,
   input:-webkit-autofill:active
   {
-   -webkit-box-shadow: 0 0 0 30px #b6acac inset !important;
+   -webkit-box-shadow: 0 0 0 30px #3f25b3 inset !important;
+   -webkit-text-fill-color: #ffffff;
   }
 
 

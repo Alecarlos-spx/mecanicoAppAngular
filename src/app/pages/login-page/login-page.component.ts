@@ -24,7 +24,7 @@ export class LoginPageComponent implements OnInit {
     private fb: FormBuilder,
     private service: DataService,
     private router: Router
-  ) { 
+  ) {
     this.form = this.fb.group({
       username: ['', Validators.compose([
         Validators.minLength(7),
@@ -69,4 +69,6 @@ export class LoginPageComponent implements OnInit {
     SecurityService.set(user, token);
     this.router.navigate(['']);
   }
+
+
 }
