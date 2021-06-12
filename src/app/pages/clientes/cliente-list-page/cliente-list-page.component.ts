@@ -4,7 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Cliente } from 'src/app/models/cliente.model';
+import { Cliente } from '../../../models/Cliente.model';
+
 import { CrudClienteService } from 'src/app/services/crud-cliente.service';
 
 

@@ -5,7 +5,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
 import { AlertModalService } from 'src/app/components/shared/alert-modal.service';
 import { Address } from 'src/app/models/Address.model';
-import { Cliente } from 'src/app/models/cliente.model';
+import { Cliente } from '../../../models/Cliente.model';
 import { DataService } from 'src/app/services/data.service';
 import { switchMap, take } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
