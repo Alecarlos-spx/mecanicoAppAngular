@@ -4,10 +4,10 @@ const app = express();
 
 const PORT = process.env.PORT || 8080;
 
-app.use(express.static(__dirname + '/dist/mecanicoapp'));
+app.use(express.static(__dirname + '/dist/MecanicoApp'));
 
-app.get('/*', (req,res) => {
-  res.sendFile(__dirname + '/dist/mecanicoapp/index.html');
+app.get('/*', (req, res) => {
+  res.sendFile(__dirname + '/dist/MecanicoApp/index.html');
 });
 
 app.listen(PORT, () => {
